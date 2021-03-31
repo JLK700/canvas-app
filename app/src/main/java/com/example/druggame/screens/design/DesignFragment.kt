@@ -24,14 +24,14 @@ class DesignFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(DesignViewModel::class.java)
         binding = DataBindingUtil.inflate(inflater, R.layout.design_fragment, container, false)
         binding.lifecycleOwner = this
-//
-//        viewModel.graph.observe(viewLifecycleOwner, Observer {
-//            binding.designCanvasView.graph = it
-//        })
-//
-//        viewModel.currentState.observe(viewLifecycleOwner, Observer {
-//            binding.designCanvasView.state = it
-//        })
+
+       viewModel.graph.observe(viewLifecycleOwner, Observer {
+           binding.designCanvasView.graph = it
+       })
+
+       viewModel.currentState.observe(viewLifecycleOwner, Observer {
+           binding.designCanvasView.state = it
+       })
 
         binding.butt.setOnClickListener {
             binding.designCanvasView.state = viewModel.currentState.value!!
