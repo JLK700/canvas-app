@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/LandingFragment">
+
+    <fragment
+        android:id="@+id/LandingFragment"
+        android:name="com.example.druggame.screens.LandingFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/landing_fragment">
+        <action
+            android:id="@+id/action_LandingFragment_to_surveyFragment"
+            app:destination="@id/surveyFragment" />
+        <action
+            android:id="@+id/action_LandingFragment_to_designFragment"
+            app:destination="@id/designFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ResultsFragment"
+        android:name="com.example.druggame.screens.results.ResultsFragment"
+        android:label="results_fragment"
+        tools:layout="@layout/results_fragment" >
+        <action
+            android:id="@+id/action_ResultsFragment_to_designFragment"
+            app:destination="@id/designFragment" />
+        <action
+            android:id="@+id/action_ResultsFragment_to_libraryFragment"
+            app:destination="@id/libraryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/LeaderboardsFragment"
+        android:name="com.example.druggame.screens.leaderboards.LeaderboardsFragment"
+        android:label="leaderboards_fragment"
+        tools:layout="@layout/leaderboards_fragment" >
+        <action
+            android:id="@+id/action_LeaderboardsFragment_to_libraryFragment"
+            app:destination="@id/libraryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/surveyFragment"
+        android:name="com.example.druggame.screens.survey.SurveyFragment"
+        android:label="survey_fragment"
+        tools:layout="@layout/survey_fragment" >
+        <action
+            android:id="@+id/action_surveyFragment_to_challengesFragment"
+            app:destination="@id/challengesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/designFragment"
+        android:name="com.example.druggame.screens.design.DesignFragment"
+        android:label="design_fragment"
+        tools:layout="@layout/design_fragment" >
+        <action
+            android:id="@+id/action_designFragment_to_ResultsFragment"
+            app:destination="@id/ResultsFragment" />
+        <action
+            android:id="@+id/action_designFragment_to_libraryFragment"
+            app:destination="@id/libraryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/challengesFragment"
+        android:name="com.example.druggame.screens.challenges.ChallengesFragment"
+        android:label="challenges_fragment"
+        tools:layout="@layout/challenges_fragment" >
+        <action
+            android:id="@+id/action_challengesFragment_to_libraryFragment"
+            app:destination="@id/libraryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.example.druggame.screens.library.LibraryFragment"
+        android:label="library_fragment"
+        tools:layout="@layout/library_fragment" >
+        <action
+            android:id="@+id/action_libraryFragment_to_designFragment"
+            app:destination="@id/designFragment" />
+        <action
+            android:id="@+id/action_libraryFragment_to_ResultsFragment"
+            app:destination="@id/ResultsFragment" />
+        <action
+            android:id="@+id/action_libraryFragment_to_LeaderboardsFragment"
+            app:destination="@id/LeaderboardsFragment" />
+    </fragment>
+</navigation>
